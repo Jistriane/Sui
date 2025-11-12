@@ -1,0 +1,40 @@
+# Move build artifacts
+**/build/
+!**/build/.gitkeep
+
+# Move lock files (opcional - alguns preferem commitar)
+# **/Move.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Walrus config (contém informações sensíveis)
+.walrus/
+
+# Sui config (contém chaves privadas - NUNCA commitar!)
+.sui/
+
+# Node modules (se houver frontend)
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Rust
+target/
+Cargo.lock

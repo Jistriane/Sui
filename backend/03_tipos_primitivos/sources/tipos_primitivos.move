@@ -56,7 +56,7 @@ module suiz3::tipos_primitivos {
         print(&or); // Resultado: [debug] true
         
         let negacao = !true; // Inverte o valor.
-        print(&negacion); // Resultado: [debug] false
+        print(&negacao); // Resultado: [debug] false
 
         
     }

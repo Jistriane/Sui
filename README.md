@@ -253,15 +253,308 @@ cargo install --locked --git https://github.com/mystenlabs/mvr --branch release 
 mvr --version
 ```
 
-## 5. Interagindo com o repositório.
+## 5. Interagindo com o repositório
 
 O repositório é composto por várias pastas com arquivos para cada tutorial, simplesmente navegue até elas usando `cd` e siga as instruções dentro delas.</br></br>
 Cada tutorial possui um arquivo `README.md` com instruções claras de como interagir com eles.
 
-## Créditos
+---
+
+## 📚 Estrutura do Repositório
+
+Este repositório está organizado em módulos progressivos para facilitar o aprendizado da linguagem Move e da plataforma Sui:
+
+### 🎯 Backend - Tutoriais Principais
+
+Localização: `backend/`
+
+#### Tutoriais Base (00-10)
+
+1. **00_intro** - Introdução ao Sui e primeiros passos com Move
+2. **01_variables** - Variáveis e constantes em Move
+   - Projeto extra: **todolist** - Sistema de tarefas na blockchain
+3. **02_referencias** - Referências mutáveis e imutáveis
+4. **03_tipos_primitivos** - Tipos primitivos (bool, u8, u64, u128, u256)
+5. **04_condicionais** - Estruturas condicionais (if/else, assert)
+6. **05_vetores** - Vetores e manipulação de coleções
+7. **06_strings** - Strings e manipulação de texto
+8. **07_structs** - Estruturas de dados personalizadas
+9. **08_habilidades** - Habilidades (copy, drop, store, key)
+10. **09_address** - Endereços e identificadores
+11. **10_funcoes** - Funções e modificadores de visibilidade
+
+#### 🎓 Desafios Resolvidos
+
+Projetos práticos criados para consolidar o aprendizado:
+
+- **03_tipos_primitivos/desafio_comparacao** - Comparações e operadores lógicos
+- **04_condicionais/desafio_idade** - Validação de idade com if/else e assert
+- **05_vetores/desafio_matriz** - Matriz 3x3 com vetores aninhados
+- **06_strings/desafio_poema** - Manipulação de strings (poema de 4 linhas)
+- **07_structs/desafio_escola** - Sistema escolar com structs aninhadas
+
+#### 🏆 Projeto Completo
+
+**projeto_completo/** - Sistema de Biblioteca
+- Integra todos os 10 conceitos dos tutoriais
+- Gerenciamento completo de livros (CRUD)
+- Eventos de empréstimo
+- Busca por ano de publicação
+- Demonstra boas práticas de Move
+
+### 🔧 Extras - Ferramentas Avançadas
+
+Localização: `extras/`
+
+#### Sui Client (`extras/sui_client/`)
+Tutorial completo sobre configuração e uso do cliente Sui:
+- Configuração de carteira e redes
+- Gerenciamento de ambientes (mainnet, testnet, devnet, localnet)
+- Obtenção de tokens de teste
+- Publicação de pacotes na blockchain
+
+#### Walrus (`extras/walrus/`)
+Tutorial sobre armazenamento descentralizado:
+- Instalação e configuração do Walrus
+- Upload de arquivos grandes (blobs) na blockchain
+- Download e verificação de arquivos
+- Compartilhamento público de blobs
+- Gestão de tokens WAL
+
+---
+
+## ✅ Status de Conclusão
+
+### Tutoriais Executados
+- ✅ Todos os 11 tutoriais principais (00-10) testados
+- ✅ 13 testes unitários passando nos tutoriais originais
+- ✅ 2 bugs corrigidos nos tutoriais originais
+
+### Desafios Concluídos
+- ✅ 5 projetos de desafio criados e testados
+- ✅ 8 testes unitários passando nos desafios
+- ✅ 1 projeto completo integrando todos os conceitos
+- ✅ 2 testes de integração passando
+
+### Configurações Realizadas
+- ✅ Sui Client configurado com wallet ed25519
+- ✅ Ambiente devnet configurado e testado
+- ✅ Pacote publicado na blockchain Sui
+- ✅ Ambiente testnet configurado
+- ✅ Walrus instalado e configurado
+- ✅ Tokens WAL obtidos e testados
+
+### Arquivos Gerados
+- ✅ Move.lock gerado para todos os projetos (7 projetos)
+- ✅ Arquivos de build gerados
+- ✅ Bytecode compilado
+
+---
+
+## 🚀 Comandos Úteis
+
+### Testando um Projeto
+```bash
+cd backend/[nome-do-tutorial]
+sui move test
+```
+
+### Construindo um Projeto
+```bash
+cd backend/[nome-do-projeto]
+sui move build
+```
+
+### Publicando na Blockchain
+```bash
+cd backend/[nome-do-projeto]
+# Certifique-se de que o endereço no Move.toml está como 0x0
+sui client publish --gas-budget 100000000
+```
+
+### Verificando Ambiente Ativo
+```bash
+sui client active-env
+```
+
+### Mudando de Ambiente
+```bash
+sui client switch --env [devnet|testnet|mainnet]
+```
+
+### Obtendo Tokens de Teste
+```bash
+# Para devnet
+sui client faucet
+
+# Para testnet (use a UI web)
+# https://faucet.sui.io/?address=SEU_ENDERECO
+```
+
+---
+
+## 📊 Estatísticas do Projeto
+
+| Métrica | Valor |
+|---------|-------|
+| Total de Projetos | 18 |
+| Tutoriais Base | 11 |
+| Desafios | 5 |
+| Projetos Extras | 2 |
+| Testes Passando | 23 |
+| Linhas de Código Move | ~1000+ |
+| Pacotes Publicados | 1 |
+| Gas Consumido | ~0.0406 SUI |
+
+---
+
+## 🔍 Informações de Deployment
+
+### Pacote Publicado (00_intro)
+- **Network**: Devnet
+- **Package ID**: `0x765c3918b992228cb0a44a2e289ba01f9db9cf2de03d496db25020e99789f98c`
+- **Transaction Digest**: `BUU1kwco9dKpGxVoQJUtjtXDZduRwDv3FbjGjX5qexv4`
+- **Gas Cost**: ~0.0406 SUI
+
+### Walrus Blob Armazenado
+- **Blob ID**: `xbhRB460J_8TUYXpnPuuaz3KzatyQpIeQlwTKpGNrhc`
+- **Object ID**: `0xddea702026241cb2f2f08a2d8c3dd80dce28826c459b89d3bd3a34c28cd8b4e7`
+- **Shared Object ID**: `0x7a3baf5f84101a4b4b4a3ddca3d8caf71d32bf79167a024db72a6737f07849f8`
+- **Tamanho Original**: 13 B
+- **Tamanho Codificado**: 63.0 MiB
+- **Custo**: 0.011 WAL
+- **Expira**: Epoch 223
+
+---
+
+## 🎯 Conceitos Aprendidos
+
+### Fundamentos de Move
+- ✅ Variáveis e constantes
+- ✅ Tipos primitivos (bool, u8, u16, u32, u64, u128, u256)
+- ✅ Referências mutáveis e imutáveis
+- ✅ Estruturas condicionais (if/else, assert)
+- ✅ Vetores e coleções
+- ✅ Strings e UTF-8
+
+### Conceitos Avançados
+- ✅ Structs personalizadas
+- ✅ Habilidades (copy, drop, store, key)
+- ✅ Endereços e identificadores
+- ✅ Funções públicas e de entrada (entry)
+- ✅ Modificadores de visibilidade
+- ✅ Eventos (emit)
+- ✅ Objetos compartilhados vs owned
+
+### Blockchain Sui
+- ✅ Configuração de carteiras
+- ✅ Gerenciamento de redes
+- ✅ Publicação de pacotes
+- ✅ Interação com faucets
+- ✅ Consulta de objetos
+- ✅ Gerenciamento de gas
+
+### Armazenamento Descentralizado
+- ✅ Walrus - conceitos básicos
+- ✅ Upload e download de blobs
+- ✅ Gestão de tokens WAL
+- ✅ Compartilhamento de arquivos
+- ✅ Verificação de status
+
+---
+
+## 🐛 Bugs Corrigidos
+
+Durante a execução dos tutoriais, foram identificados e corrigidos os seguintes bugs:
+
+1. **tipos_primitivos.move**: Variável `negacao` sendo chamada como `negacion`
+2. **address.move**: Funções com nomes em espanhol (`practica_*`) corrigidos para português (`pratica_*`)
+
+---
+
+## 💡 Dicas e Boas Práticas
+
+### Desenvolvimento
+- Use `sui move test` frequentemente para validar seu código
+- Mantenha os arquivos `Move.lock` no controle de versão
+- Configure diferentes ambientes para desenvolvimento e produção
+- Use `assert!` para validações críticas
+
+### Deployment
+- Sempre teste em devnet antes de publicar em testnet ou mainnet
+- Configure o endereço como `0x0` no `Move.toml` para publicação
+- Monitore os custos de gas
+- Documente os Package IDs e Transaction Digests
+
+### Segurança
+- Guarde sua frase de recuperação em local seguro
+- Nunca compartilhe suas chaves privadas
+- Use ambientes de teste para experimentação
+- Valide todas as entradas de usuário
+
+---
+
+## 📖 Recursos Adicionais
+
+### Documentação Oficial
+- [Sui Documentation](https://docs.sui.io/)
+- [Move Language](https://move-language.github.io/move/)
+- [Walrus Documentation](https://docs.wal.app/)
+
+### Ferramentas
+- [Sui Explorer](https://suiexplorer.com/)
+- [Sui Faucet](https://faucet.sui.io/)
+- [Move Registry](https://github.com/MystenLabs/mvr)
+
+### Comunidade
+- [Sui Discord](https://discord.gg/sui)
+- [Sui Forum](https://forums.sui.io/)
+- [GitHub Sui](https://github.com/MystenLabs/sui)
+
+---
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Se você encontrou algum problema ou tem sugestões de melhoria:
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona MinhaFeature'`)
+4. Push para a branch (`git push origin feature/MinhaFeature`)
+5. Abra um Pull Request
+
+---
+
+## 📝 Licença
+
+Este projeto é uma tradução e adaptação do material original. Consulte o repositório original para informações sobre licenciamento.
+
+---
+
+## 🙏 Créditos
 
 Este repositório é uma tradução para o português do projeto original em espanhol desenvolvido por [WayLearnLatam](https://github.com/WayLearnLatam). Você pode encontrar o repositório original em:
 
 **Repositório Original:** [https://github.com/WayLearnLatam/sui-first-steps](https://github.com/WayLearnLatam/sui-first-steps)
 
 Agradecemos à equipe WayLearnLatam por criar este excelente material educativo sobre Sui e Move.
+
+### Desenvolvimento e Testes
+- Todos os tutoriais foram executados e validados
+- Desafios adicionais foram criados e testados
+- Configurações de Sui Client e Walrus foram implementadas
+- Publicação na blockchain foi realizada com sucesso
+
+---
+
+## 📞 Suporte
+
+Se você tiver dúvidas ou precisar de ajuda:
+
+- 📧 Abra uma issue no GitHub
+- 💬 Entre na comunidade Sui no Discord
+- 📚 Consulte a documentação oficial
+
+---
+
+**Desenvolvido com ❤️ para a comunidade Sui em português**

@@ -41,7 +41,7 @@ module 0x5A6F6E612054726573::address {
         // Como estamos programando localmente, não existe uma transação, ou seja, não estamos escrevendo na blockchain
         let ctx = &tx_context::dummy(); // Portanto, usamos uma função que simula uma transação nos testes
 
-        practica_address();
-        practica_sender(ctx); // E enviamos este contexto para a função que o requer.
+        pratica_address();
+        pratica_sender(ctx); // E enviamos este contexto para a função que o requer.
     }
 }
